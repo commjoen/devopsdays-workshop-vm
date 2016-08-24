@@ -1,0 +1,4 @@
+[com.canonical.unity-greeter]
+draw-user-backgrounds=false
+background='/usr/share/backgrounds/xebia.png'
+draw-grid=false
