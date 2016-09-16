@@ -63,6 +63,18 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
+  # provision MongoDB
+  # provision docker images
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-mongodb.sh'
+    s.privileged = true
+  end
+
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-nodegoat.sh'
+    s.privileged = true
+  end
+
   config.vm.provision 'shell' do |s|
     s.inline = "echo Finished provisioning, login with user vagrant pass vagrant"
   end
