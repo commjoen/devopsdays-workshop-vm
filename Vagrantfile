@@ -5,9 +5,11 @@ Vagrant.configure(2) do |config|
   	# Display the VirtualBox GUI when booting the machine
   	vb.gui = true
   	# Customize the amount of memory on the VM:
-  	vb.memory = "2048"
+  	vb.memory = "3096"
   	vb.cpus = 2
-	vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
+	  vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
+    vb.customize ["modifyvm", :id, "--vram", "128"]
   end
 
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
