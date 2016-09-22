@@ -66,14 +66,20 @@ Vagrant.configure(2) do |config|
   end
 
   # provision MongoDB
-  # provision docker images
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-mongodb.sh'
     s.privileged = true
   end
 
+  # provision MongoDB
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-nodegoat.sh'
+    s.privileged = true
+  end
+
+  # provision ZAP
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-zap.sh'
     s.privileged = true
   end
 
