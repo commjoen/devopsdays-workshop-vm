@@ -76,7 +76,7 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  config.vm.provision 'file', source: 'e2etest.js', destination: '/home/vagrant/e2etest.js'
+  config.vm.provision 'file', source: "assets/e2etest.js", destination: "/home/vagrant/Documents/workspace/NodeGoat/test/security/e2etest.js"
 
   # provision juiceshop
   config.vm.provision 'shell' do |s|
@@ -90,9 +90,6 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  config.vm.provision 'shell' do |s|
-    s.inline = "sudo mv ~/e2etest.js Documents/workspace/NodeGoat/test/security"
-    s.inline = "echo Finished provisioning, login with user vagrant pass vagrant"
-  end
+  
 
 end
