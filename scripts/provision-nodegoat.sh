@@ -28,5 +28,5 @@ grunt db-reset:development
 cd test
 mkdir workshop
 echo "#Here we create our testfile" > ./workshop/e2etest.js
-cd ..
+cd ../..
 sudo chown vagrant:vagrant NodeGoat -R
