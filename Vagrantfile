@@ -91,6 +91,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision 'shell' do |s|
+    s.inline = "sudo mv ~/e2etest.js Documents/workspace/NodeGoat/test/security"
     s.inline = "echo Finished provisioning, login with user vagrant pass vagrant"
   end
 
