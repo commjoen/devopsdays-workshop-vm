@@ -90,6 +90,6 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  
+
 
 end

@@ -8,7 +8,7 @@ cd Documents
 mkdir workspace
 cd workspace
 git clone https://github.com/OWASP/NodeGoat.git
-
+sudo chown vagrant:vagrant NodeGoat -R
 cd NodeGoat
 
 echo "--- Installing Grunt and Bower ---"
