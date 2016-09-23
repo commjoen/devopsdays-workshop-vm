@@ -11,7 +11,6 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
     vb.customize ["modifyvm", :id, "--vram", "128"]
   end
-
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   config.vm.provision 'shell' do |s|
@@ -76,6 +75,8 @@ Vagrant.configure(2) do |config|
     s.path = 'scripts/provision-nodegoat.sh'
     s.privileged = true
   end
+
+  config.vm.provision "file", source: "./scripts/sources/e2etest.js", destination: "/home/vagrant/documents/workspace/nodegoat/test/"
 
   # provision juiceshop
   config.vm.provision 'shell' do |s|

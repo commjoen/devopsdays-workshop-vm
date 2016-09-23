@@ -26,7 +26,5 @@ npm install chromedriver
 grunt db-reset:development
 
 cd test
-mkdir workshop
-echo "#Here we create our testfile" > ./workshop/e2etest.js
-cd ../..
-sudo chown vagrant:vagrant NodeGoat -R
+cd security
+rm profile-test.js
