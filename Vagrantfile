@@ -77,6 +77,12 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
+  # provision juiceshop
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-juiceshop.sh'
+    s.privileged = true
+  end
+
   # provision ZAP
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-zap.sh'
