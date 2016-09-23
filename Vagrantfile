@@ -67,13 +67,13 @@ Vagrant.configure(2) do |config|
   # provision MongoDB
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-mongodb.sh'
-    s.privileged = true
+    s.privileged = false
   end
 
   # provision MongoDB
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-nodegoat.sh'
-    s.privileged = true
+    s.privileged = false
   end
 
   config.vm.provision 'file', source: "assets/e2etest.js", destination: "/home/vagrant/Documents/workspace/NodeGoat/test/security/e2etest.js"
@@ -81,13 +81,13 @@ Vagrant.configure(2) do |config|
   # provision juiceshop
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-juiceshop.sh'
-    s.privileged = true
+    s.privileged = false
   end
 
   # provision ZAP
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-zap.sh'
-    s.privileged = true
+    s.privileged = false
   end
 
 
