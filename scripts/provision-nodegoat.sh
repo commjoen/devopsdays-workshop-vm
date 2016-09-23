@@ -21,4 +21,12 @@ sed -i '2i\'"$MONGOCONFIG" ./config/env/development.js
 
 npm install
 
+npm install chromedriver
+
 grunt db-reset:development
+
+cd test
+mkdir workshop
+echo "#Here we create our testfile" > ./workshop/e2etest.js
+cd ..
+sudo chown vagrant:vagrant NodeGoat -R
