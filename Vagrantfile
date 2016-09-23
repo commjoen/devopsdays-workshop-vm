@@ -76,7 +76,7 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  config.vm.provision "file", source: "./scripts/sources/e2etest.js", destination: "/home/vagrant/documents/workspace/nodegoat/test/"
+  config.vm.provision 'file', source: 'e2etest.js', destination: '/home/vagrant/documents/workspace/nodegoat/test/e2etest.js'
 
   # provision juiceshop
   config.vm.provision 'shell' do |s|
