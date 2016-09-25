@@ -59,6 +59,18 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
+  # IntelliJ IDEA
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-intellij.sh'
+    s.privileged = true
+  end
+
+  # IntelliJ IDEA user config
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-intellij-user.sh'
+    s.privileged = false
+  end
+
   # provision docker images
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/docker-images.sh'
