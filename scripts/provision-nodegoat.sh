@@ -1,14 +1,13 @@
 echo "Provisioning NodeGoat..."
 
-config.vm.provider "virtualbox" do |v|
-    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
-end
+#config.vm.provider "virtualbox" do |v|
+    #v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+#end
 
 cd Documents
 mkdir workspace
 cd workspace
 git clone https://github.com/OWASP/NodeGoat.git
-
 cd NodeGoat
 
 echo "--- Installing Grunt and Bower ---"
@@ -21,4 +20,10 @@ sed -i '2i\'"$MONGOCONFIG" ./config/env/development.js
 
 npm install
 
+npm install chromedriver
+
 grunt db-reset:development
+
+cd test
+cd security
+rm profile-test.js

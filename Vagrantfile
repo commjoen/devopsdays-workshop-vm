@@ -11,7 +11,6 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
     vb.customize ["modifyvm", :id, "--vram", "128"]
   end
-
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   config.vm.provision 'shell' do |s|
@@ -78,19 +77,31 @@ Vagrant.configure(2) do |config|
   end
 
   # provision MongoDB
-  # provision docker images
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-mongodb.sh'
-    s.privileged = true
+    s.privileged = false
   end
 
+  # provision MongoDB
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-nodegoat.sh'
-    s.privileged = true
+    s.privileged = false
   end
 
+  config.vm.provision 'file', source: "assets/e2etest.js", destination: "/home/vagrant/Documents/workspace/NodeGoat/test/security/e2etest.js"
+
+  # provision juiceshop
   config.vm.provision 'shell' do |s|
-    s.inline = "echo Finished provisioning, login with user vagrant pass vagrant"
+    s.path = 'scripts/provision-juiceshop.sh'
+    s.privileged = false
   end
+
+  # provision ZAP
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-zap.sh'
+    s.privileged = false
+  end
+
+
 
 end

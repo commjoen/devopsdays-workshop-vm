@@ -9,3 +9,6 @@ sudo apt-get purge lxc-docker
 sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 sudo apt-get install -y docker-engine
 sudo service docker start
+
+# please node that this has impact on the security posture of the vagrant image. We only do this for simplicity of the workshop
+sudo usermod -aG docker vagrant
