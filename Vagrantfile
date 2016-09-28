@@ -102,6 +102,10 @@ Vagrant.configure(2) do |config|
     s.privileged = false
   end
 
-
+  # provision Hoverfly
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-hoverfly.sh'
+    s.privileged = false
+  end
 
 end
