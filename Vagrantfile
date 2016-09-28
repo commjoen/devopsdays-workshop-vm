@@ -107,5 +107,16 @@ Vagrant.configure(2) do |config|
     s.path = 'scripts/provision-hoverfly.sh'
     s.privileged = false
   end
+  
+  # provision Maven
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-maven.sh'
+    s.privileged = false
+  end
 
+  # provision Docker Compose
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-docker-compose.sh'
+    s.privileged = false
+  end
 end
