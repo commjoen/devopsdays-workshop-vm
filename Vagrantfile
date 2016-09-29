@@ -119,4 +119,10 @@ Vagrant.configure(2) do |config|
     s.path = 'scripts/provision-docker-compose.sh'
     s.privileged = false
   end
+
+  # provision Cypress
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-cypress.sh'
+    s.privileged = false
+  end
 end
