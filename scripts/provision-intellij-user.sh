@@ -16,9 +16,9 @@ unzip -o cucumber.zip
 wget -O cucumber-java.zip "https://plugins.jetbrains.com/plugin/download?pr=idea&updateId=25773"
 unzip -o cucumber-java.zip
 
-mkdir -p ~vagrant/IdeaProjects
+mkdir -p ~vagrant/academy-day
 
-cd ~vagrant/IdeaProjects
+cd ~vagrant/academy-day
 git clone https://github.com/amolenaar/test-automation-training.git
 
 ( cd test-automation-training && ./gradlew idea; )

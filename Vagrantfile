@@ -7,9 +7,21 @@ Vagrant.configure(2) do |config|
     # Customize the amount of memory on the VM:
     vb.memory = "3096"
     vb.cpus = 2
+    vb.vm.synced_folder ".", "/vagrant", disabled: true
     vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
     vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
     vb.customize ["modifyvm", :id, "--vram", "128"]
+    ## USB settings needed for Testmasters bot
+    vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ["modifyvm", :id, "--usbehci", "on"]
+    vb.customize ["usbfilter", "add", "0", 
+    "--target", :id, 
+    "--name", "QinHeng Electronics USB2.0-Serial [0254]",
+    "--vendorid", "1a86",
+    "--productid", "7523",
+    "--revision", "0254",
+    "--product", "USB2.0-Serial",
+    "--remote", "no"]
   end
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
@@ -38,6 +50,12 @@ Vagrant.configure(2) do |config|
   # Kill user session to force load of PATH env var
   config.vm.provision 'shell' do |s|
     s.inline = "pkill -u vagrant"
+  end
+
+  # Create folders
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/create-folders.sh'
+    s.privileged = false
   end
 
   # Docker
@@ -117,6 +135,24 @@ Vagrant.configure(2) do |config|
   # provision Docker Compose
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-docker-compose.sh'
+    s.privileged = false
+  end
+
+  # provision vscode
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-vscode.sh'
+    s.privileged = true
+  end
+
+  # fix permissions
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/fix-permissions.sh'
+    s.privileged = true
+  end
+
+  # provision repos
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-workshop-repos.sh'
     s.privileged = false
   end
 end
