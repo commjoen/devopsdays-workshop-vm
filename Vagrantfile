@@ -148,6 +148,12 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
+  # provision Cypress
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-cypress.sh'
+    s.privileged = false
+  end
+
   # provision repos
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-workshop-repos.sh'
