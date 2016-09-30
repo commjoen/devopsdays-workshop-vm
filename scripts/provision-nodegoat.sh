@@ -26,4 +26,4 @@ grunt db-reset:development
 
 cd test
 cd security
-rm profile-test.js
+mv profile-test.js profile-test.js.bak
