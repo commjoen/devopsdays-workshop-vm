@@ -33,3 +33,12 @@ git clone https://github.com/eskape/example-mapping-serenity
 cd example-mapping-serenity
 #mvn install
 cd ~
+
+## Screenplay vs PageObject
+cd academy-day
+git clone https://github.com/xebia/screenplay-meetup.git
+cd screenplay-meetup
+mvn compile
+cd frontend
+npm install
+cd ~
