@@ -31,7 +31,7 @@ cd ~
 cd conference-day
 git clone https://github.com/eskape/example-mapping-serenity
 cd example-mapping-serenity
-#mvn install
+mvn install
 cd ~
 
 ## SpectoLabs repo
