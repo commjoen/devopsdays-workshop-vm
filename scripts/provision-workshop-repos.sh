@@ -34,6 +34,13 @@ cd example-mapping-serenity
 #mvn install
 cd ~
 
+## SpectoLabs repo
+cd conference-day
+git clone https://github.com/benjih/oreilly-docker-java-shopping spectolabs-workshop
+cd spectolabs-workshop
+./build_all.sh
+cd ~
+
 ## Screenplay vs PageObject
 cd academy-day
 git clone https://github.com/xebia/screenplay-meetup.git
