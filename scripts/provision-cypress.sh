@@ -2,7 +2,7 @@
 set -e
 
 echo "Provisioning Cypress Dependencies..."
-sudo apt-get install xvfb
+sudo apt-get install -y xvfb
 
 echo "Provisioning Cypress..."
 cd conference-day
