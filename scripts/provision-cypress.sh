@@ -11,13 +11,13 @@ sudo npm install -g cypress-cli
 cypress install
 
 echo "Provisioning cypress-example-todomvc..."
-git clone https://github.com/cypress-io/cypress-example-todomvc.git
+git clone -b workshop https://github.com/cypress-io/cypress-example-todomvc.git
 cd cypress-example-todomvc
 npm install
 
 echo "Provisioning cypress-example-phonecat..."
 cd ~/cypress-workshop
-git clone https://github.com/cypress-io/cypress-example-phonecat.git
+git clone -b workshop https://github.com/cypress-io/cypress-example-phonecat.git
 cd cypress-example-phonecat
 npm install
 
