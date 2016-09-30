@@ -7,7 +7,6 @@ Vagrant.configure(2) do |config|
     # Customize the amount of memory on the VM:
     vb.memory = "3096"
     vb.cpus = 2
-    vb.vm.synced_folder ".", "/vagrant", disabled: true
     vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
     vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
     vb.customize ["modifyvm", :id, "--vram", "128"]
@@ -20,9 +19,9 @@ Vagrant.configure(2) do |config|
     "--vendorid", "1a86",
     "--productid", "7523",
     "--revision", "0254",
-    "--product", "USB2.0-Serial",
     "--remote", "no"]
   end
+
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   config.vm.provision 'shell' do |s|

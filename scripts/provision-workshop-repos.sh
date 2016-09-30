@@ -26,3 +26,10 @@ mkdir security-testing
 mv ~vagrant/Documents/tools/ security-testing
 mv ~vagrant/Documents/workspace/ security-testing
 cd ~
+
+## Example mapping with Serenity
+cd conference-day
+git clone https://github.com/eskape/example-mapping-serenity
+cd example-mapping-serenity
+#mvn install
+cd ~
