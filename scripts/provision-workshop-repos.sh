@@ -40,3 +40,12 @@ git clone https://github.com/benjih/oreilly-docker-java-shopping spectolabs-work
 cd spectolabs-workshop
 ./build_all.sh
 cd ~
+
+## Screenplay vs PageObject
+cd academy-day
+git clone https://github.com/xebia/screenplay-meetup.git
+cd screenplay-meetup
+mvn compile
+cd frontend
+npm install
+cd ~
