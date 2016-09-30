@@ -12,7 +12,6 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--vram", "128"]
     ## USB settings needed for Testmasters bot
     vb.customize ["modifyvm", :id, "--usb", "on"]
-    vb.customize ["modifyvm", :id, "--usbehci", "on"]
     vb.customize ["usbfilter", "add", "0", 
     "--target", :id, 
     "--name", "QinHeng Electronics USB2.0-Serial [0254]",
