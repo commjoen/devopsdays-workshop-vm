@@ -72,6 +72,54 @@ test.describe("The RetirEasy app ", function() {
     assert(webDriver.get)
     webDriver.sleep(1000);
     webDriver.getCurrentUrl().should.eventually.endWith("dashboard");
+    webDriver.findElement(By.id("logout-menu-link")).click();
+    done();
+  });
+
+  test.it("Should allow a logged in user to update contributions", function(done) {
+    webDriver.getWindowHandle();
+    webDriver.get(zapTargetApp);
+    webDriver.sleep(1000);
+    webDriver.findElement(By.name("userName")).sendKeys(sutUserName);
+    webDriver.findElement(By.name("password")).sendKeys(sutUserPassword);
+    webDriver.sleep(1000);
+    webDriver.findElement({
+        tagName: "button",
+        type: "submit"
+    }).click();
+    assert(webDriver.get)
+    webDriver.sleep(1000);
+    webDriver.findElement(By.id("contributions-menu-link")).click();
+    webDriver.sleep(1000);
+    webDriver.findElement(By.name("preTax")).sendKeys("8");
+    webDriver.findElement(By.name("roth")).sendKeys("8");
+    webDriver.findElement(By.name("afterTax")).sendKeys("8");
+    webDriver.findElement(By.className("btn-default")).click();
+    webDriver.sleep(1000);
+    webDriver.findElement(By.className("alert")).isDisplayed();
+    webDriver.findElement(By.id("logout-menu-link")).click();
+    done();
+  });
+
+  test.it("Should allow a user to register", function(done){
+    webDriver.getWindowHandle();
+    webDriver.get(zapTargetApp);
+    webDriver.sleep(1000);
+    webDriver.findElement(By.linkText("New user? Sign Up")).click();
+    webDriver.findElement(By.name("userName")).sendKeys("testuser2");
+    webDriver.findElement(By.name("firstName")).sendKeys("test");
+    webDriver.findElement(By.name("lastName")).sendKeys("user");
+    webDriver.findElement(By.name("password")).sendKeys("loginpw");
+    webDriver.findElement(By.name("verify")).sendKeys("loginpw");
+    webDriver.findElement(By.name("email")).sendKeys("test@info2.nl");
+    webDriver.findElement(By.className("btn-primary")).click();
+
+    assert(webDriver.get)
+    webDriver.sleep(1000);
+    webDriver.findElement(By.id("logout-menu-link")).isDisplayed();
+
+    webDriver.findElement(By.id("logout-menu-link")).click();
+
     done();
   });
 });
