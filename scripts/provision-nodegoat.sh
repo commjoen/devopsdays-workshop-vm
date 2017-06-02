@@ -10,8 +10,8 @@ cd workspace
 git clone https://github.com/OWASP/NodeGoat.git
 cd NodeGoat
 
-echo "--- Installing Grunt and Bower ---"
-sudo npm install -g grunt@0.4.5 grunt-cli bower
+#echo "--- Installing Grunt and Bower ---"
+#sudo npm install -g grunt@0.4.5 grunt-cli bower
 
 sudo add-apt-repository ppa:chris-lea/node.js
 $MONGOCONFIG="db: \"mongodb://localhost:27017/nodegoat\""
@@ -22,7 +22,7 @@ npm install
 
 npm install chromedriver
 
-grunt db-reset:development
+npm run db:seed
 
 cd test
 cd security
