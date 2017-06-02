@@ -12,8 +12,8 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--vram", "128"]
     ## USB settings needed for Testmasters bot
     vb.customize ["modifyvm", :id, "--usb", "on"]
-    vb.customize ["usbfilter", "add", "0", 
-    "--target", :id, 
+    vb.customize ["usbfilter", "add", "0",
+    "--target", :id,
     "--name", "QinHeng Electronics USB2.0-Serial [0254]",
     "--vendorid", "1a86",
     "--productid", "7523",
@@ -75,16 +75,16 @@ Vagrant.configure(2) do |config|
   end
 
   # IntelliJ IDEA
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-intellij.sh'
-    s.privileged = true
-  end
+  # config.vm.provision 'shell' do |s|
+  #   s.path = 'scripts/provision-intellij.sh'
+  #   s.privileged = true
+  # end
 
   # IntelliJ IDEA user config
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-intellij-user.sh'
-    s.privileged = false
-  end
+  # config.vm.provision 'shell' do |s|
+  #   s.path = 'scripts/provision-intellij-user.sh'
+  #   s.privileged = false
+  # end
 
   # provision docker images
   config.vm.provision 'shell' do |s|
@@ -123,7 +123,7 @@ Vagrant.configure(2) do |config|
     s.path = 'scripts/provision-hoverfly.sh'
     s.privileged = false
   end
-  
+
   # provision Maven
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-maven.sh'
