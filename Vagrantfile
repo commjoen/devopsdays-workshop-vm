@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
     # Customize the amount of memory on the VM:
-    vb.memory = "3096"
+    vb.memory = "4096"
     vb.cpus = 2
     vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
     vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
@@ -74,18 +74,6 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  # IntelliJ IDEA
-  # config.vm.provision 'shell' do |s|
-  #   s.path = 'scripts/provision-intellij.sh'
-  #   s.privileged = true
-  # end
-
-  # IntelliJ IDEA user config
-  # config.vm.provision 'shell' do |s|
-  #   s.path = 'scripts/provision-intellij-user.sh'
-  #   s.privileged = false
-  # end
-
   # provision docker images
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/docker-images.sh'
@@ -118,40 +106,16 @@ Vagrant.configure(2) do |config|
     s.privileged = false
   end
 
-  # provision Hoverfly
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-hoverfly.sh'
-    s.privileged = false
-  end
-
-  # provision Maven
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-maven.sh'
-    s.privileged = false
-  end
-
   # provision Docker Compose
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-docker-compose.sh'
     s.privileged = false
   end
 
-  # provision vscode
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-vscode.sh'
-    s.privileged = true
-  end
-
   # fix permissions
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/fix-permissions.sh'
     s.privileged = true
-  end
-
-  # provision Cypress
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-cypress.sh'
-    s.privileged = false
   end
 
   # provision repos

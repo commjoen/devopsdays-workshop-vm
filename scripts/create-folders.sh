@@ -1,2 +1,2 @@
-mkdir academy-day
-mkdir conference-day
+mkdir -p academy-day
+mkdir -p conference-day
