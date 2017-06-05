@@ -108,7 +108,13 @@ Vagrant.configure(2) do |config|
 
   # provision mysql-server
   config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision_mysql.sh'
+    s.path = 'scripts/provision-mysql.sh'
+    s.privileged = true
+  end
+
+  # provision threadfix
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-threadfix.sh'
     s.privileged = true
   end
 
