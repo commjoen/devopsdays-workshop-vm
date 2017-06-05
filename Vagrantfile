@@ -106,6 +106,12 @@ Vagrant.configure(2) do |config|
     s.privileged = false
   end
 
+  # provision mysql-server
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision_mysql.sh'
+    s.privileged = true
+  end
+
   # provision Docker Compose
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-docker-compose.sh'
