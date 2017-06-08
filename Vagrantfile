@@ -92,7 +92,11 @@ Vagrant.configure(2) do |config|
     s.privileged = false
   end
 
-  config.vm.provision 'file', source: "assets/e2etest.js", destination: "/home/vagrant/Documents/workspace/NodeGoat/test/security/e2etest.js"
+  # provision jenkins
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-jenkins.sh'
+    s.privileged = true
+  end
 
   # provision juiceshop
   config.vm.provision 'shell' do |s|
