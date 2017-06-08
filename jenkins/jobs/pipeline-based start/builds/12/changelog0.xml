@@ -1,0 +1,22 @@
+commit 30be9bb35f4f21bfd18cbfb30d8fe57f9514ab0f
+tree 5af742234e0cbe2efc3fd07dbb208d638b70d384
+parent cd1d1b2cc5dd6824570ce718d37aa475400694e1
+author Jeroen Willemsen <jwillemsen@xebia.com> 2017-06-08 17:10:19 +0200
+committer Jeroen Willemsen <jwillemsen@xebia.com> 2017-06-08 17:10:19 +0200
+
+    updated jenkinsfile
+
+
+
+:100644 100644 8527f6257e36753a7365b6c90a19ea5c9940ebd6 a92d590844efd5c0e16e0da9de0bf133264e34f2 M	Jenkinsfile
+commit cd1d1b2cc5dd6824570ce718d37aa475400694e1
+tree aeb1fcd2865f8510868299be6dd85347137dc031
+parent 259e8c6c9a892de306e1e4d3fe5ccc03284ad2a4
+author Jeroen Willemsen <jwillemsen@xebia.com> 2017-06-08 16:57:55 +0200
+committer Jeroen Willemsen <jwillemsen@xebia.com> 2017-06-08 16:57:55 +0200
+
+    updated jenkinsfile
+
+
+
+:100644 100644 636c6f4e78c79fb3ceb64fdaa1b58afb85770693 8527f6257e36753a7365b6c90a19ea5c9940ebd6 M	Jenkinsfile

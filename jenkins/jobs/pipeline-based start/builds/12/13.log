@@ -1,0 +1,3 @@
+[pipeline-based start] Running shell script
++ npm install
+/var/jenkins_home/workspace/pipeline-based start@tmp/durable-8f0cd9f1/script.sh: 2: /var/jenkins_home/workspace/pipeline-based start@tmp/durable-8f0cd9f1/script.sh: npm: not found

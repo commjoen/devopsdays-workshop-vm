@@ -1,0 +1,17 @@
+[pipeline-based start] Running shell script
++ npm install
+npm WARN deprecated swig@1.4.2: This package is no longer maintained
+npm WARN deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+npm WARN deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
+npm WARN deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
+npm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+npm WARN prefer global jshint@2.9.4 should be installed with -g
+npm WARN prefer global npm@3.10.10 should be installed with -g
+npm WARN prefer global coffee-script@1.10.0 should be installed with -g
+
+> fsevents@1.1.1 install /var/jenkins_home/workspace/pipeline-based start/node_modules/fsevents
+> node install
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 1147 packages in 287.104s

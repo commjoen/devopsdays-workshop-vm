@@ -1,0 +1,11 @@
+commit 259e8c6c9a892de306e1e4d3fe5ccc03284ad2a4
+tree 15b3d2a1e8535578d82804326db27876b791ecbe
+parent 7e92c264381d7eea3f9e8c868bcefa9df0c05b52
+author Jeroen Willemsen <jwillemsen@xebia.com> 2017-06-08 16:49:29 +0200
+committer Jeroen Willemsen <jwillemsen@xebia.com> 2017-06-08 16:49:29 +0200
+
+    updated jenkinsfile
+
+
+
+:100644 100644 2c37fd796706f643599c323c090b3f0371f13a5f 636c6f4e78c79fb3ceb64fdaa1b58afb85770693 M	Jenkinsfile

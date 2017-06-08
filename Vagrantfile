@@ -92,12 +92,6 @@ Vagrant.configure(2) do |config|
     s.privileged = false
   end
 
-  # provision jenkins
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-jenkins.sh'
-    s.privileged = true
-  end
-
   # provision juiceshop
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-juiceshop.sh'
@@ -116,16 +110,28 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  # provision threadfix
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-threadfix.sh'
-    s.privileged = true
-  end
-
   # provision Docker Compose
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-docker-compose.sh'
     s.privileged = false
+  end
+
+  # provision jenkins
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-jenkins.sh'
+    s.privileged = true
+  end
+
+  # provision files
+  Vagrant.configure("2") do |config|
+    # ... other configuration
+    config.vm.provision "file", source: "./jenkins", destination: "/home/vagrant/jenkins"
+  end
+
+  # provision threadfix
+  config.vm.provision 'shell' do |s|
+    s.path = 'scripts/provision-threadfix.sh'
+    s.privileged = true
   end
 
   # fix permissions

@@ -1,0 +1,17 @@
+Cloning the remote Git repository
+Cloning repository https://github.com/nbaars/NodeGoat.git
+ > git init /var/jenkins_home/workspace/pipeline-based start # timeout=10
+Fetching upstream changes from https://github.com/nbaars/NodeGoat.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/nbaars/NodeGoat.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/nbaars/NodeGoat.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/nbaars/NodeGoat.git # timeout=10
+Fetching upstream changes from https://github.com/nbaars/NodeGoat.git
+ > git fetch --tags --progress https://github.com/nbaars/NodeGoat.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 7e92c264381d7eea3f9e8c868bcefa9df0c05b52 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7e92c264381d7eea3f9e8c868bcefa9df0c05b52
+First time build. Skipping changelog.
