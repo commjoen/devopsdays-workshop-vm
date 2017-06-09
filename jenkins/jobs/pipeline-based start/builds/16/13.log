@@ -1,6 +1,0 @@
-$ /var/jenkins_home/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/nodejs8/bin/npm install -g retire, grunt
-npm ERR! code EINVALIDTAGNAME
-npm ERR! Invalid tag name "retire,": Tags may not have any characters that encodeURIComponent encodes.
-
-npm ERR! A complete log of this run can be found in:
-npm ERR!     /var/jenkins_home/.npm/_logs/2017-06-08T15_20_47_325Z-debug.log

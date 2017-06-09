@@ -122,12 +122,6 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  # provision files
-  Vagrant.configure("2") do |config|
-    # ... other configuration
-    config.vm.provision "file", source: "./jenkins", destination: "/home/vagrant/jenkins"
-  end
-
   # provision threadfix
   config.vm.provision 'shell' do |s|
     s.path = 'scripts/provision-threadfix.sh'
