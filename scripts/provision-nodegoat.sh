@@ -17,7 +17,7 @@ sudo add-apt-repository ppa:chris-lea/node.js
 npm install
 
 npm install chromedriver
-
+npm install -g grunt
 npm run db:seed
 
 cd test
