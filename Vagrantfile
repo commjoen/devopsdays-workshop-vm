@@ -74,11 +74,6 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  # provision docker images
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/docker-images.sh'
-    s.privileged = true
-  end
 
   # provision MongoDB
   config.vm.provision 'shell' do |s|
