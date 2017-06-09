@@ -4,8 +4,6 @@ echo "Provisioning NodeGoat..."
     #v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
 #end
 
-cd Documents
-mkdir workspace
 cd workspace
 git clone https://github.com/nbaars/NodeGoat.git
 cd NodeGoat

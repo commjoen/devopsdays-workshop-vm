@@ -1,6 +1,5 @@
 echo "Provisioning Defect-Dojo..."
 
-cd Documents
 cd tools
 git clone https://github.com/OWASP/django-DefectDojo.git
 cd django-DefectDojo

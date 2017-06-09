@@ -111,11 +111,11 @@ Vagrant.configure(2) do |config|
     s.privileged = false
   end
 
-  # provision jenkins
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-jenkins.sh'
-    s.privileged = true
-  end
+  # provision jenkins (can be turned on for jenkins workshops)
+  # config.vm.provision 'shell' do |s|
+  #   s.path = 'scripts/provision-jenkins.sh'
+  #   s.privileged = true
+  # end
 
   # provision threadfix
   config.vm.provision 'shell' do |s|
@@ -129,9 +129,4 @@ Vagrant.configure(2) do |config|
     s.privileged = true
   end
 
-  # provision repos
-  config.vm.provision 'shell' do |s|
-    s.path = 'scripts/provision-workshop-repos.sh'
-    s.privileged = false
-  end
 end

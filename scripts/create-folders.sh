@@ -1,2 +1,2 @@
-mkdir -p academy-day
-mkdir -p conference-day
+mkdir -p tools
+mkdir -p workspace

@@ -1,5 +1,4 @@
 echo "Provisioning Threadfix..."
 
-cd Documents
-cd workspace
+cd tools
 git clone https://github.com/denimgroup/threadfix.git
