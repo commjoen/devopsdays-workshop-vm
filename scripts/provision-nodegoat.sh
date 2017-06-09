@@ -18,6 +18,7 @@ npm install
 
 npm install chromedriver
 npm install -g grunt
+npm install -g grunt-cli 
 npm run db:seed
 
 cd test
